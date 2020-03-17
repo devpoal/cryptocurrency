@@ -1,39 +1,160 @@
 .App {
-  text-align: center;
+	text-align: center;
+	display: flex;
+	/*flex-direction: column;*/
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-inside {
+	margin: auto;
+	padding: 30px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.Title {
+	font-weight: 300;
+	font-size: 50px;
+	margin-top: 20px;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Loading {
+	width: 50px;
+	height: 50px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: transparent #000 transparent #000;
+	border-radius: 50%;
+	animation: loading 1s linear infinite;
+	margin: 0 auto;
+	margin-top: 50px;
+	box-sizing: border-box;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+@keyframes loading {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
+button {
+	padding: 10px;
+	background-color: #ccc;
+	border-radius: 5px;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.Error-title {
+	font-size: 20px;
+}
+
+.Error-btn {
+	margin-top: 20px;
+}
+
+.Main {
+	width: 600px;
+	margin: 60px auto 0;
+}
+
+.Table {
+	display: table;
+	font-size: 20px;
+	width: 100%;
+	border: 1px solid #D5DDEC;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.Table-row {
+	display: table-row;
+	cursor: pointer;
+	transition: background-color .5s;
+}
+
+.Table-row--up {
+	background-color: #d6ffcf;
+}
+
+.Table-row--down {
+	background-color: #fbb5b5;
+}
+
+.Table-row:first-of-type .Table-cell {
+	border-top: none;
+	background-color: #F4F6FB;
+	padding: 12px 10px 15px;
+}
+
+.Table-cell:nth-of-type(2) {
+	text-align: left;
+}
+
+.Table-cell {
+	text-align: center;
+	vertical-align: middle;
+	display: table-cell;
+	padding: 10px;
+	border-top: 1px solid #D5DDEC;
+}
+
+.Table-price {
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.Calc {
+	margin-top: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.Calc-separate {
+	font-size: 70px;
+	line-height: 0;
+	margin: -17px 20px 0;
+	font-weight: 300;
+}
+
+.Calc-select {
+	width: 100%;
+	height: 50px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	font-size: 18px;
+	background-color: #F4F6FB;
+	border: 1px solid #D5DDEC;
+	border-radius: 5px;
+	outline: none;
+	transition: box-shadow .3s;
+}
+
+option {
+	font-size: 16px;
+}
+
+.Calc-input {
+	width: 100%;
+	height: 50px;
+	padding: 10px 15px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	font-size: 18px;
+	background-color: #F4F6FB;
+	border: 1px solid #D5DDEC;
+	border-radius: 5px;
+	outline: none;
+	transition: box-shadow .3s;
+}
+
+.Calc-select:focus,
+.Calc-input:focus {
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
 }
